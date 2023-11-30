@@ -14,7 +14,7 @@ private:
 public:
 	threadsafe_queue()
 	{}
-	threadsafe_queue(threadsafe_queue const& other)
+	threadsafe_queue(const threadsafe_queue & other)
 	{
 		std::lock_guard<std::mutex> lk(other.mut);
 		data_queue=other.data_queue;
